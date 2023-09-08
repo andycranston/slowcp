@@ -161,6 +161,9 @@ int main(argc, argv)
 			case 'M':
 				sizelong = sizelong * 1024 * 1024;
 				break;
+			case 'G':
+				sizelong = sizelong * 1024 * 1024 * 1024;
+				break;
 		}
 	}
 
