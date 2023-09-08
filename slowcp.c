@@ -1,7 +1,7 @@
 #define DEBUG
 
 /*
- *  @(!--#) @(#) slowcp.c, version 004, 07-september-2023
+ *  @(!--#) @(#) slowcp.c, version 005, 08-september-2023
  *
  *  do a simple file copy but pause between each block/buffer
  *
@@ -42,8 +42,8 @@
 #endif
 
 #define DEFAULT_BUFSIZ 512
-#define DEFAULT_PAUSE_SECOND 1
-#define DEFAULT_PAUSE_NANOSECOND 0
+#define DEFAULT_PAUSE_SECOND 0
+#define DEFAULT_PAUSE_NANOSECOND 1000000
 
 /**********************************************************************/
 
@@ -118,7 +118,7 @@ int main(argc, argv)
 			fprintf(stderr, "%s: unrecognised command line option \"%s\"\n", progname, argv[arg]);
 			exit(1);
 		} else {
-			printf("Break out with arg=%d\n", arg);
+			/* printf("Break out with arg=%d\n", arg); */
 			break;
 		}
 	}
@@ -140,18 +140,6 @@ int main(argc, argv)
 		fprintf(stderr, "%s: too many filenames specified on the command line\n", progname);
 		exit(1);
 	}
-
-/*
-	if (srcfname == NULL) {
-		fprintf(stderr, "%s: no source or destination filename specified on the command line\n", progname);
-		exit(1);
-	}
-
-	if (dstfname == NULL) {
-		fprintf(stderr, "%s: no destination filename specified on the command line\n", progname);
-		exit(1);
-	}
-*/
 
 #ifdef DEBUG
 	printf("Source filename........: %s\n", srcfname);
