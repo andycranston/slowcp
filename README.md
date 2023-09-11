@@ -68,7 +68,25 @@ WARNING: if the file `bigfile.bin` already it exists it will be overwriten witho
 
 ## Command line options
 
-The `bigile` command has some command line options.
+The `bigfile` command has some command line options.
+
+### Option `-s` for file size
+
+By default the `bigfile` command creates a file of 1048576 bytes (exactly one megabyte). To specifiy a different size
+use the `-s` command line options. For example to create a file of 2097152 bytes (exactly two megabytes) use:
+
+```
+bigfile -s 2097152
+```
+
+The size value can have a trailing modifier of 'k' for kilobytes, 'm' for megabytes and 'g' for gigabytes. So another way
+of creating a file of two megabytes is to run:
+
+```
+bigfile -s 2m
+```
+
+Note that creating very large files will take some time depending on the efficieny of the underlying hardware.
 
 ### Option `-f` for file name
 
@@ -84,12 +102,25 @@ WARNING: if the file specified by the `-f` command line option already it exists
 
 ### Option `-b` for block size
 
-TBC.
+By default the `bigfile` command uses a block size of 512 bytes. To specify a different size use the
+`-b` command line option. For example:
 
-### Option `-b` for byte value
+```
+bigfile -b 8129
+```
 
-TBC.
+will use a block size of 8129 bytes when creating the default file `bigfile.bin`.
 
+### Option `-v` for byte value
+
+By default the file created by the `bigfile` command will be made up of zero (null) bytes. To use a different
+byte value use the `-v` command line option. For example to use the value 65:
+
+```
+bigfile -v 65
+```
+
+The content of the generated file will be byte value 65 (the upper case 'A' character).
 
 ----------------
 End of README.md
