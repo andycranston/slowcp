@@ -32,7 +32,7 @@ mean the copy would take at a minimum 10 minutes to complete. Once the `slowcp` 
 backup application could be started to backup up the file (which will be open) and the behaviour
 can be observed.
 
-## Command line options
+## slowcp command line options
 
 The `slowcp` command has some command line options.
 
@@ -86,7 +86,7 @@ will be all null bytes (0x00).
 
 WARNING: if the file `bigfile.bin` already it exists it will be overwriten without warning.
 
-## Command line options
+## bigfile command line options
 
 The `bigfile` command has some command line options.
 
