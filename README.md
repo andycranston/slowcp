@@ -23,7 +23,7 @@ The `slowcp` command has some command line options.
 Normally the `slowcp` command reads and writes content of the files with buffer of 512 bytes.
 
 To use a different size use the `-b` command line option. For example to copy a file called
-`sfile` to a file `dfile` with a block size of 8129 bytes run:
+`sfile` to a file `dfile` with a block size of 8192 bytes run:
 
 ```
 slowcp -b 8192 sfile dfile
@@ -92,10 +92,10 @@ Note that creating very large files will take some time depending on the efficie
 
 To specifiy a different file name use the `-f` command line option.
 
-For example to create a file called `verylarge` run:
+For example to create a file called `verylarge` with a size of 8 megabytes run:
 
 ```
-bigfile -f verylarge
+bigfile -f verylarge -s 8m
 ```
 
 WARNING: if the file specified by the `-f` command line option already it exists it will be overwriten without warning.
@@ -106,10 +106,10 @@ By default the `bigfile` command uses a block size of 512 bytes. To specify a di
 `-b` command line option. For example:
 
 ```
-bigfile -b 8129
+bigfile -b 8192
 ```
 
-will use a block size of 8129 bytes when creating the default file `bigfile.bin`.
+will use a block size of 8192 bytes when creating the default file `bigfile.bin`.
 
 ### Option `-v` for byte value
 
