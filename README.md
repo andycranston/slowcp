@@ -11,7 +11,7 @@ Normally this would be a bad thing but it can come in handy when performing cert
 For example if you wanted to see what happens when a backup application copies an open file you could
 initiate a `slowcp` command to copy a large file (say a file 5 gigabtes in size) with a delay that would
 mean the copy would take at a minimum 10 minutes to complete. Once the `slowcp` command is started the
-backup appilication could be started to backup up the file (which will be open) and the behaviour
+backup application could be started to backup up the file (which will be open) and the behaviour
 can be observed.
 
 ## Command line options
@@ -50,6 +50,8 @@ To specify a delay of one and a half seconds run:
 ```
 slowcp -s 1 -n 5000000000 sfile dfile
 ```
+
+------------------------------------------------------------------------------
 
 # bigfile
 
